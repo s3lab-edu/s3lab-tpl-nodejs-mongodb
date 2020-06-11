@@ -1,0 +1,60 @@
+{
+  "name": "nodejs_api_mongodb",
+  "version": "0.2.5",
+  "private": true,
+  "description": "An API boiled code for Nodejs, express and mongodb",
+  "apidoc": {
+    "title": "API DOCS",
+    "version": "0.7.0",
+    "url": "http://localhost/docs"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "main": "server.js",
+  "scripts": {
+    "relstart": "RUN_MODE=PROD PORT=8080 node server.js",
+    "devstart": "RUN_MODE=DEV PORT=8080 node server.js",
+    "slabstart": "RUN_MODE=SLAB PORT=8080 node server.js",
+    "debug": "nodemon server.js",
+    "config": "npm config set msvs_version 2015 --global",
+    "update": "npm update mongoose --save",
+    "remove": "npm remove",
+    "install1": "npm install sharp -S",
+    "uninstall": "npm uninstall node-gyp --S",
+    "genAPIDoc": "apidoc -i ./app/route/ -o ./public/docs/"
+  },
+  "dependencies": {
+    "async": "^2.2.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "cron": "^1.2.1",
+    "express": "^4.15.2",
+    "find-remove": "^1.0.1",
+    "fs": "0.0.1-security",
+    "fs-extra": "^2.1.2",
+    "google-auth-library": "^2.0.1",
+    "json2csv": "^3.11.1",
+    "jsonwebtoken": "^8.4.0",
+    "method-override": "^2.3.8",
+    "moment": "^2.18.1",
+    "mongoose": "^4.9.2",
+    "multer": "^1.3.0",
+    "path": "^0.12.7",
+    "request": "^2.81.0",
+    "socket.io": "^2.1.1",
+    "validator": "^7.0.0"
+  },
+  "devDependencies": {
+    "apidoc": "^0.20.0",
+    "morgan": "^1.9.1"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "s3lab.",
+  "license": "MIT",
+  "//": "prerequisite: [node-gyp for build the sharp], [apidoc --save-dev for document], [pm2 -g for process manager]"
+}
