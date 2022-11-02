@@ -6,11 +6,11 @@ const Mongoose = require('mongoose');
 
 // our components
 const Constant = require('../configs/constant');
-const PagedFind = require('./plugins/pagedFind'); // cái này là cái gì v tời :===
+const PagedFind = require('./plugins/pagedFind');
 
 let Schema = Mongoose.Schema;
 
-// We have 2 default user in this system: sadmin:sadmin, anonymous:anonymous
+// We have 2 default users in this system: sadmin:sadmin, anonymous:anonymous
 let UserSchema = new Schema({
     loginName: {
         type: String,
@@ -208,8 +208,9 @@ UserSchema.pre('save', function (next) {
     let currentDate = new Date();
     this.updatedAt = currentDate;
 
-    if (!this.createdAt)
+    if (!this.createdAt) {
         this.createdAt = currentDate;
+    }
 
     next();
 });

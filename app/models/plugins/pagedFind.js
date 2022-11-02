@@ -7,7 +7,7 @@ const Async = require('async'); // cái này nó làm gì v trời :((
 const Constant = require('../../configs/constant');
 const Pieces = require('../../utils/pieces');
 
-module.exports = exports = function pagedFindPlugin (schema) {
+module.exports = function pagedFindPlugin (schema) {
     schema.statics.pagedFind = function(options, queryContent, callback) {
         let thisSchema = this;
         let page = 1;

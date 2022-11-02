@@ -1,14 +1,14 @@
 {
-  "name": "my_project_connect_to_mongodb",
+  "name": "s3lab_tpl_nodejs_mongodb",
   "version": "1.0.0",
-  "description": "",
+  "description": "a template project for nodejs + mongoose + express",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js ",
+    "debug": "nodemon server.js ",
+    "start": "node server.js ",
     "genAPIDoc": "apidoc -i ./app/route/ -o ./public/docs/"
   },
-  "author": "",
+  "author": "S3LAB.",
   "license": "ISC",
   "dependencies": {
     "async": "^3.2.4",
@@ -22,7 +22,8 @@
     "method-override": "^3.0.0",
     "mongoose": "^6.6.1",
     "morgan": "^1.10.0",
-    "validator": "^13.7.0"
+    "validator": "^13.7.0",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.20",
