@@ -1,37 +1,41 @@
 {
   "name": "s3lab_tpl_nodejs_mongodb",
-  "version": "1.0.0",
-  "description": "a template project for nodejs + mongoose + express",
+  "version": "0.2.5",
+  "private": true,
+  "description": "An API boiled code for Nodejs, express and mongodb",
+  "apidoc": {
+    "title": "API DOCS",
+    "version": "0.7.0",
+    "url": "http://localhost/docs"
+  },
+  "engines": {
+    "node": "14.x"
+  },
   "main": "server.js",
   "scripts": {
-    "debug": "nodemon server.js ",
-    "start": "node server.js ",
-    "genAPIDoc": "apidoc -i ./app/route/ -o ./public/docs/"
+    "debug": "nodemon server.js",
+    "start": "node server.js",
+    "genAPIDoc": "apidoc -i app/routes/ -o ./public/docs/"
   },
-  "author": "S3LAB.",
-  "license": "ISC",
   "dependencies": {
-    "async": "^3.2.4",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.20.0",
-    "express": "^4.18.1",
-    "fs": "^0.0.1-security",
-    "fs-extra": "^10.1.0",
-    "google-auth-library": "^8.5.1",
-    "jsonwebtoken": "^8.5.1",
-    "method-override": "^3.0.0",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "method-override": "^2.3.8",
     "mongoose": "^6.6.1",
-    "morgan": "^1.10.0",
-    "validator": "^13.7.0",
+    "path": "^0.12.7",
+    "request": "^2.81.0",
+    "validator": "^7.0.0",
     "cors": "^2.8.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20",
-    "apidoc": "^0.53.0",
-    "dotenv": "^16.0.3"
+    "apidoc": "^0.20.0",
+    "morgan": "^1.9.1"
   },
-  "engines": {
-    "node": "16.16.0",
-    "npm": "8.18.0"
-  }
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "s3lab.",
+  "license": "MIT"
 }
