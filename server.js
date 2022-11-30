@@ -2,18 +2,9 @@
 let Express = require('express');
 let BodyParser = require('body-parser');
 let MethodOverride = require('method-override');
-let Mongoose = require('mongoose');
-const Morgan = require('morgan');
 const cors = require('cors');
 
 let App = Express();
-// MongoDB Connect
-Mongoose.connect('mongodb+srv://dientv:dientv@cluster0.c4eivn9.mongodb.net/?retryWrites=true&w=majority', ()=>{
-    console.log('connected to DB');
-});
-
-// log by using morgan
-App.use(Morgan('combined'));
 
 // parse application/json
 App.use(BodyParser.json({
@@ -34,10 +25,21 @@ App.use(BodyParser.urlencoded({
 // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
 App.use(MethodOverride('X-HTTP-Method-Override'));
 
+// support CORS from API
 App.use(cors());
 
 // Routes ==================================================
-require('./app/route')(App); // configure our routes
+App.get('/v1/users/:id', (req, res) => {
+    let id = req.params.id || '';
+    res.send('Hello World: ' + id);
+});
+
+App.get('/v1/users', (req, res) => {
+    const out = { message: 'helloWorld!'};
+    res.status(200);
+    res.contentType('json');
+    return res.json(out);
+});
 
 // Create App
 let server = require('http').createServer(App);
