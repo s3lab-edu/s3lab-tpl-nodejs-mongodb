@@ -29,18 +29,7 @@ App.use(MethodOverride('X-HTTP-Method-Override'));
 App.use(cors());
 
 // Routes ==================================================
-App.get('/v1/users/:id', (req, res) => {
-    let id = req.params.id || '';
-    res.send('Hello World: ' + id);
-});
-
-App.get('/v1/users', (req, res) => {
-    const out = { message: 'helloWorld!'};
-    res.status(200);
-    res.contentType('json');
-    return res.json(out);
-});
-
+require('./App/route')(App); // configure our routes
 // Create App
 let server = require('http').createServer(App);
 
@@ -49,5 +38,5 @@ server.listen(3000, function () {
     console.log('API V2.1 started to listening on port %d', 3000);
 });
 
-// expose app
+// expose App
 module.exports = App;
