@@ -29,14 +29,14 @@ App.use(MethodOverride('X-HTTP-Method-Override'));
 App.use(cors());
 
 // Routes ==================================================
-require('./App/route')(App); // configure our routes
-// Create App
+require('./app/route')(App); // configure our routes
+// Create app
 let server = require('http').createServer(App);
 
-// Start App: http://IP_Address:port
+// Start app: http://IP_Address:port
 server.listen(3000, function () {
     console.log('API V2.1 started to listening on port %d', 3000);
 });
 
-// expose App
+// expose app
 module.exports = App;
