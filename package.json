@@ -3,33 +3,19 @@
   "version": "0.2.5",
   "private": true,
   "description": "An API boiled code for Nodejs, express and mongodb",
-  "apidoc": {
-    "title": "API DOCS",
-    "version": "0.7.0",
-    "url": "http://localhost/docs"
-  },
   "engines": {
     "node": "14.x"
   },
   "main": "server.js",
   "scripts": {
-    "debug": "nodemon server.js",
     "start": "node server.js",
-    "genAPIDoc": "apidoc -i app/routes/ -o ./public/docs/"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "method-override": "^2.3.8",
     "mongoose": "^6.6.1",
-    "path": "^0.12.7",
-    "request": "^2.81.0",
-    "validator": "^7.0.0",
     "cors": "^2.8.5"
-  },
-  "devDependencies": {
-    "apidoc": "^0.20.0",
-    "morgan": "^1.9.1"
   },
   "keywords": [
     "node",
