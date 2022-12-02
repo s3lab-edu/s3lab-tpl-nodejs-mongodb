@@ -3,8 +3,6 @@ const Rest = require('../utils/restware');
 module.exports = {
     getAll: function (req, res) {
         const out = { title: 'helloWorld!', age: 12};
-        res.status(200);
-        res.contentType('json');
         return Rest.sendSuccess(res, out, 200);
     },
 
