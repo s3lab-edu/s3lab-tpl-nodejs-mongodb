@@ -3,7 +3,6 @@ let Express = require('express');
 let BodyParser = require('body-parser');
 let MethodOverride = require('method-override');
 let Mongoose = require('mongoose');
-const Morgan = require('morgan');
 const cors = require('cors');
 
 let App = Express();
@@ -11,9 +10,6 @@ let App = Express();
 Mongoose.connect('mongodb+srv://dientv:dientv@cluster0.c4eivn9.mongodb.net/?retryWrites=true&w=majority', ()=>{
     console.log('connected to DB');
 });
-
-// log by using morgan
-App.use(Morgan('combined'));
 
 // parse application/json
 App.use(BodyParser.json({
